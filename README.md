@@ -47,12 +47,18 @@ Este projeto está preparado para deploy estático no Hostinger (Apache + GitHub
 | Output directory     | `dist`                 |
 | Node version         | `>=18` (definido em `package.json`) |
 
-**Variáveis de ambiente (obrigatórias):**
+**Variáveis de ambiente:**
 
 ```
-VITE_BASE44_APP_ID=6a0d05aa26af897b0567e927
-VITE_BASE44_APP_BASE_URL=https://seu-app.base44.app
+VITE_BASE44_APP_ID=6a0d05aa26af897b0567e927        # obrigatório
+VITE_BASE44_APP_BASE_URL=https://seu-app.base44.app # opcional (ver abaixo)
 ```
+
+`VITE_BASE44_APP_BASE_URL` só é necessário quando o front-end está num
+domínio diferente do backend Base44 (ex.: hospedado no Hostinger em
+`paristeste.cloud`). Se o app é servido pelo próprio Base44 em
+`*.base44.app`, deixe em branco — o app resolve via `window.location.origin`
+em runtime.
 
 Veja `.env.example` para a lista completa.
 
