@@ -17,9 +17,9 @@ Any change pushed to the repo will also be reflected in the Base44 Builder.
 3. Install dependencies: `npm install`
 4. Create an `.env.local` file and set the right environment variables
 
-```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
+```dotenv
+VITE_BASE44_APP_ID=your_app_id                       # obrigatório
+VITE_BASE44_APP_BASE_URL=your_backend_url            # opcional — só quando o front roda num domínio diferente do backend
 
 e.g.
 VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
@@ -49,7 +49,7 @@ Este projeto está preparado para deploy estático no Hostinger (Apache + GitHub
 
 **Variáveis de ambiente:**
 
-```
+```dotenv
 VITE_BASE44_APP_ID=6a0d05aa26af897b0567e927        # obrigatório
 VITE_BASE44_APP_BASE_URL=https://seu-app.base44.app # opcional (ver abaixo)
 ```
