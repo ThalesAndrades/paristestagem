@@ -1,0 +1,19 @@
+{
+  "name": "Paris Teste — Provador Virtual com IA · Óticas Paris",
+  "short_name": "Paris Teste",
+  "description": "Experimente óculos das melhores marcas direto da sua casa. Provador Virtual com IA das Óticas Paris.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0F3E99",
+  "lang": "pt-BR",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://media.base44.com/images/public/6a0d05aa26af897b0567e927/dc677011e_iconoticas.ico",
+      "type": "image/x-icon",
+      "sizes": "any"
+    }
+  ]
+}

@@ -32,6 +32,39 @@ Run the app: `npm run dev`
 
 Open [Base44.com](http://Base44.com) and click on Publish.
 
+---
+
+## Deploy no Hostinger (via GitHub)
+
+Este projeto está preparado para deploy estático no Hostinger (Apache + GitHub import).
+
+**Configuração na importação:**
+
+| Campo                | Valor                  |
+| -------------------- | ---------------------- |
+| Install command      | `npm install`          |
+| Build command        | `npm run build`        |
+| Output directory     | `dist`                 |
+| Node version         | `>=18` (definido em `package.json`) |
+
+**Variáveis de ambiente (obrigatórias):**
+
+```
+VITE_BASE44_APP_ID=6a0d05aa26af897b0567e927
+VITE_BASE44_APP_BASE_URL=https://seu-app.base44.app
+```
+
+Veja `.env.example` para a lista completa.
+
+**Já incluído para produção:**
+
+- `public/.htaccess` — fallback de rotas para SPA (React Router), cache de assets imutáveis, gzip, headers de segurança, HTTPS forçado
+- `public/_redirects` — fallback estilo Netlify
+- `public/manifest.json` — PWA mínimo referenciado por `index.html`
+- `public/robots.txt`
+
+Após o deploy, configure as variáveis no painel do Hostinger e dispare um novo build.
+
 **Docs & Support**
 
 Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
