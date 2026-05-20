@@ -1,0 +1,139 @@
+/*
+ * Tipografia oficial — MuseoSans (servida via use.typekit/CDN).
+ * Fallback genérico segue a stack de sistema da identidade Paris.
+ */
+@import url('https://use.typekit.net/dpb6kqb.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;          /* #FFFFFF */
+    --foreground: 202 86% 38%;        /* #0E71B8 (text primary oficial) */
+    --card: 0 0% 100%;
+    --card-foreground: 202 86% 38%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 202 86% 38%;
+
+    /* PRIMARY — Paris Blue oficial #0F3E99 */
+    --primary: 222 82% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    /* SECONDARY — Paris Pink oficial #FAD9E1 */
+    --secondary: 348 80% 92%;
+    --secondary-foreground: 222 82% 33%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 45%;
+
+    /* ACCENT — Paris Light Blue oficial #0E71B8 (também usado em links) */
+    --accent: 202 86% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 222 82% 33%;
+    --radius: 0.25rem;                /* 4px (oficial) */
+
+    --font-museo: 'museo-sans', -apple-system, BlinkMacSystemFont,
+      'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto,
+      sans-serif;
+    --font-editorial: 'Playfair Display', Georgia, serif;
+
+    /* Tokens de marca diretos (para uso em estilos custom) */
+    --paris-primary: #0F3E99;
+    --paris-primary-dark: #0A2D72;
+    --paris-secondary: #FAD9E1;
+    --paris-accent: #0E71B8;
+    --paris-accent-dark: #0A5A93;
+
+    /* Aliases legados — mantidos para evitar quebras em telas existentes.
+       Apontam agora para os tokens oficiais da marca. */
+    --paris-red: #0F3E99;
+    --paris-red-dark: #0A2D72;
+    --paris-blue: #0E71B8;
+    --paris-blue-dark: #0A5A93;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-museo antialiased;
+  }
+}
+
+/* Editorial serif headline (Paris signature) — usado em destaques */
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.paris-red-text {
+  color: var(--paris-primary);
+}
+
+.paris-blue-text {
+  color: var(--paris-accent);
+}
+
+/* Botão primário oficial (azul Paris) */
+.paris-btn {
+  background: var(--paris-primary);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.paris-btn:hover {
+  background: var(--paris-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 62, 153, 0.25);
+}
+
+/* Botão outline accent (azul claro) */
+.paris-btn-outline {
+  background: white;
+  color: var(--paris-accent);
+  border: 1.5px solid var(--paris-accent);
+  transition: all 0.2s ease;
+}
+
+.paris-btn-outline:hover {
+  background: var(--paris-accent);
+  color: white;
+}
+
+.card-paris {
+  background: white;
+  border: 1px solid hsl(214 20% 90%);
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(15, 62, 153, 0.05);
+}
+
+.top-bar {
+  background: var(--paris-primary);
+  color: white;
+}
+
+@keyframes paris-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(15, 62, 153, 0.4); }
+  50%      { box-shadow: 0 0 0 12px rgba(15, 62, 153, 0); }
+}
+
+.animate-paris-pulse {
+  animation: paris-pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "TryOnAuditLog",
+  "type": "object",
+  "description": "Registro forense de cada tentativa de gera\u00e7\u00e3o no provador virtual. Usado para auditoria de seguran\u00e7a, detec\u00e7\u00e3o de abuso e m\u00e9tricas operacionais.",
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "generation_success",
+        "generation_failed",
+        "rate_limited",
+        "blocked_url",
+        "blocked_content",
+        "blocked_input",
+        "blocked_unauthenticated"
+      ],
+      "description": "Tipo do evento registrado"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email do usu\u00e1rio autenticado (snapshot, pode estar vazio em eventos de bloqueio pr\u00e9-auth)"
+    },
+    "person_image_url": {
+      "type": "string",
+      "description": "URL da imagem da pessoa enviada"
+    },
+    "glasses_image_url": {
+      "type": "string",
+      "description": "URL da imagem do \u00f3culos enviada"
+    },
+    "ip_hash": {
+      "type": "string",
+      "description": "Hash SHA-256 do IP de origem (para rate-limit sem PII)"
+    },
+    "user_agent": {
+      "type": "string",
+      "description": "User-agent reportado pelo cliente"
+    },
+    "duration_ms": {
+      "type": "number",
+      "description": "Dura\u00e7\u00e3o da gera\u00e7\u00e3o em milissegundos"
+    },
+    "block_reason": {
+      "type": "string",
+      "description": "Motivo do bloqueio, se aplic\u00e1vel"
+    },
+    "error_message": {
+      "type": "string",
+      "description": "Mensagem de erro t\u00e9cnica, se houve falha"
+    }
+  },
+  "required": [
+    "event_type"
+  ]
+}
