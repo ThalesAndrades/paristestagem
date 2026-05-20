@@ -6,7 +6,6 @@ import {
   Heart,
   ChevronLeft,
   MessageCircle,
-  ChevronRight as ChevronRightIcon,
 } from 'lucide-react';
 import ParisHeader from '@/components/tryon/ParisHeader';
 import ParisFooter from '@/components/tryon/ParisFooter';

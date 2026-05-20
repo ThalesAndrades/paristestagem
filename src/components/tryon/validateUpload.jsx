@@ -139,11 +139,21 @@ Analyze the image and classify it across these dimensions:
     required: ['is_safe', 'niche_match', 'rejection_reason'],
   };
 
-  const result = await base44.integrations.Core.InvokeLLM({
-    prompt,
-    file_urls: [fileUrl],
-    response_json_schema: schema,
-  });
+  const result = /** @type {{
+    is_safe?: boolean;
+    has_human_face?: boolean;
+    face_usable_for_tryon?: boolean;
+    is_eyewear_product?: boolean;
+    eyewear_usable_for_tryon?: boolean;
+    niche_match?: boolean;
+    rejection_reason?: string;
+  }} */ (
+    await base44.integrations.Core.InvokeLLM({
+      prompt,
+      file_urls: [fileUrl],
+      response_json_schema: schema,
+    })
+  );
 
   // Política de bloqueio em ordem (a mais grave primeiro)
   if (!result.is_safe) {
