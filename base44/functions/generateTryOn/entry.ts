@@ -22,6 +22,7 @@ const ALLOWED_IMAGE_HOSTS = [
   'media.base44.com',
   'storage.base44.com',
   'app.base44.com',
+  'vtexassets.com',
 ];
 
 // ── Rate limit em memória (suficiente para um único worker; reseta a cada cold start)
